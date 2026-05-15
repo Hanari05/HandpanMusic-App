@@ -35,8 +35,8 @@ namespace A04NNGHHandpan
         /// <param name="e"></param>
         private void btnStartStop_Click(object sender, EventArgs e)
         {
-            fn.SoundVolume = 100; //MessageBox.Show(audiopath + "haruharu.mp3");
-            fn.Play2D(audiopath + "20 HANDPANS _ Handpan Choir & Malte Marten_128k.mp3", true);
+            fn.SoundVolume = 100;
+            fn.Play2D(audiopath + "Emotional Romantic.mp3", true);
             MessageBox.Show("OK");
         }//button Play Sound
     }//class

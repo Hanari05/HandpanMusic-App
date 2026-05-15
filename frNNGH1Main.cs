@@ -78,5 +78,16 @@ namespace A04NNGHHandpan
                 Application.Exit();
             }
         }// TOOLSTRIP - CLOSE
+
+        /// <summary>
+        /// QUẢN LÝ ÂM THANH DÙNG IRRKLANG => GỌI FORM QUẢN LÝ ÂM THANH DÙNG IRRKLANG
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frNNGH3irrKLang fr = new frNNGH3irrKLang();
+            fr.ShowDialog();
+        }//irrKlang
     }//class
 }//namespace

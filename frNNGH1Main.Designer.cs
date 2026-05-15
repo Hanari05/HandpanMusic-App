@@ -287,6 +287,7 @@
             this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1.Name = "quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1";
             this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1.Size = new System.Drawing.Size(340, 26);
             this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1.Text = "Quản lý âm thanh dùng irrKlang";
+            this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1.Click += new System.EventHandler(this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1_Click);
             // 
             // nạpÂmThanhDùngIrrKlangToolStripMenuItem1
             // 

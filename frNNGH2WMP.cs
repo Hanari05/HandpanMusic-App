@@ -134,7 +134,7 @@ namespace A04NNGHHandpan
         /// <param name="e"></param>
         private void btnNew_Click(object sender, EventArgs e)
         {
-            //B1:Cho || cấm các nút lệnh các khác và một số textbox liên quan thông tin file âm thanh mà NSD tự nhập (mã số, mô tả) 
+            //B1:Cho || cấm các nút lệnh khác và một số textbox liên quan thông tin file âm thanh mà NSD tự nhập (mã số, mô tả) 
             txtMaso.Enabled = !txtMaso.Enabled;
             txtDesc.Enabled = !txtDesc.Enabled;
             btnModify.Enabled = !btnModify.Enabled;
@@ -146,17 +146,38 @@ namespace A04NNGHHandpan
             //bắt đầu nập file âm thanh = NSD chọn file & nập thông tin ["Nạp thêm files" copy từ Design sang, KHÔNG tự  nhập]
             {//Mở OpenFilesDialog lên cho NSD chọn file âm thanh / PC
                 ch = openFileDialog1.ShowDialog();
-                //biến toàn cục ch đã khai báo phía trên, giữ lại nút lệnh (Y|N) mà NSD đã chọn để xử lý trong ...else..  
-                txtMaso.Text = "Quý vị phải nhập mã số file vào đây";
-                txtDesc.Text = ""; // Xóa thống để NSD nhập mlo6 tả mới
-                btnNew.Text = "Lưu file âm thanh"; //Đổi nhãn (.Text) thahh2 "Lưu...": tự nhập
+                if (ch == DialogResult.OK)
+                {
+                    //biến toàn cục ch đã khai báo phía trên, giữ lại nút lệnh (Y|N) mà NSD đã chọn để xử lý trong ...else..  
+                    txtMaso.Text = "Quý vị phải nhập mã số file vào đây";
+                    txtDesc.Text = ""; // Xóa thống để NSD nhập mlo6 tả mới
+                    btnNew.Text = "Lưu file âm thanh"; //Đổi nhãn (.Text) thahh2 "Lưu...": tự nhập
+
+                    //BS1: Nhập thông tin Size, Ext và Length 
+                    string filePath = openFileDialog1.FileName;
+                    txtname.Text = Path.GetFileName(filePath);
+                    txtExt.Text = Path.GetExtension(filePath);
+
+                    FileInfo fileInfo = new FileInfo(filePath);
+                    long sizeInKB = fileInfo.Length / 1024;
+                    txtSize.Text = sizeInKB.ToString();
+
+                    var mediaInfo = axWMP.newMedia(filePath);
+                    txtLeng.Text = ((int)mediaInfo.duration).ToString();
+                }
             }
             else//Sau khi NSD chọn file & nhập thông tin xong => Lưu file âm thanh vào thư mục App\AudioFiles và cập nhật thông tin file âm thanh vào DB
             {//B3: NẠP FILE ÂM THANH VÀO APP = GỒM 2 BƯỚC CƠ BẢN = COPY FILE ÂM THANH VÀO THƯ MỤC CỦA APP(AudioFiles) +Update THÔNG TIN FILE ÂM THANH VÀO DB
                 if (ch == DialogResult.OK)//NSD đã đồng ý nạp file âm thanh đã chọn từ OpenFileDialog
                 {
-                    string tenfile = System.IO.Path.GetFileName(openFileDialog1.FileName);
-                    //tên file âm thanh mà NSD đã chọn
+                    string tenfile = System.IO.Path.GetFileName(openFileDialog1.FileName);//tên file âm thanh mà NSD đã chọn
+
+
+                    //BS2: WMP nhả file ra để không bị lỗi "đang sử dụng" khi Copy - VẪN CHƯA CHẠY ĐƯỢC -> SỬA LẠI SAU
+                    axWMP.Ctlcontrols.stop();
+                    axWMP.URL = "";
+
+
                     //[1] COPY FILE ÂM THANH ĐÃ CHỌN VÀO THƯ MỤC ~\\AudioFiles
                     try
                     {
@@ -170,8 +191,12 @@ namespace A04NNGHHandpan
                     //NSD bắt buộc nhập mã số file âm thanh thì mới lưu được.
                     {
                         try
-                        {
-                            aUDIOFILESTableAdapter.Insert(txtMaso.Text.Trim(), audiopath + tenfile, tenfile, 0, "", 0, txtDesc.Text);
+                        {// BS3: Lấy dữ liệu thực tế từ các ô Textbox để đưa vào câu lệnh Inser
+                            int kichThuoc = int.Parse(txtSize.Text);
+                            int chieuDai = int.Parse(txtLeng.Text);
+                            string phanMoRong = txtExt.Text;
+
+                            aUDIOFILESTableAdapter.Insert(txtMaso.Text.Trim(), audiopath + tenfile, tenfile, kichThuoc, phanMoRong, chieuDai, txtDesc.Text);
                             //NẠP THÔNG TIN FILE ÂM THANH VÀO DB [1 TRONG 2 CÂU LỆNH QUANG TRỌNG]
                         }
                         catch (System.Exception ex)
@@ -215,7 +240,7 @@ namespace A04NNGHHandpan
             btnPre.Enabled = !btnPre.Enabled;
             //B2: ĐỔI NHÃN (.TEXT) CỦA NÚT LỆNH : "Sửa..." <-> "Lưu..."
             if (btnModify.Text == "Sửa thông tin file")
-            //bắt đầu Sửa thông tin file âm thanh trong các TextBox ["Sửa thông tin files" copy từ Design sang, KHÔNG tự  nhập]
+            //bắt đầu Sửa thông tin file âm thanh trong các TextBox ["Sửa thông tin files" copy từ Design sang, KHÔNG tự nhập]
             {//Thông báo nhắc NSD cách sủa thông tin
                 MessageBox.Show("Quý vị sửa mô tả file trong TextBox Mô tả phía trên, Không sửa được các thông tin khác."); //thông báo hướng dẫn NSD cách sửa thông tin file            
                 btnModify.Text = "Lưu sau sửa"; //Đổi nhãn (.Text) thành2 "Lưu...": tự nhập

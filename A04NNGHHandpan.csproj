@@ -160,11 +160,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="AudioFiles\20 HANDPANS _ Handpan Choir &amp; Malte Marten_128k.mp3" />
-    <Content Include="AudioFiles\C418 - Aria Math %28 Handpan Cover %29_128k.mp3" />
+    <Content Include="AudioFiles\20 Colors.mp3" />
+    <Content Include="AudioFiles\Documentary.mp3" />
+    <Content Include="AudioFiles\Emotional Romantic.mp3" />
+    <Content Include="AudioFiles\Essay.mp3" />
+    <Content Include="AudioFiles\Extract From.mp3" />
     <Content Include="AudioFiles\Handpan by Yuki Koshimoto_320k.mp3" />
     <Content Include="AudioFiles\Hang Massive - Once Again - 2011 %28 hang drum duo %29 %28 HD %29_320k.mp3" />
+    <Content Include="AudioFiles\Lost in Summer.mp3" />
+    <Content Include="AudioFiles\Once Again.mp3" />
+    <Content Include="AudioFiles\Snow in Winter.mp3" />
+    <Content Include="AudioFiles\Tales Story.mp3" />
     <Content Include="AudioFiles\Yatao _ Phoenix _ Handpan &amp; Didge_320k.mp3" />
+    <Content Include="AudioFiles\Phoenix.mp3" />
     <Content Include="Image\background.png" />
     <Content Include="Image\close_button.png" />
     <Content Include="Image\WMP_button.jpg" />
