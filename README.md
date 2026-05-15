@@ -1,4 +1,4 @@
-** HANDPAN MUSIC APP 🎧🎶🥁
-📍 Đồ án môn Lập Trình Âm Thanh
-📍 Được code bởi C# trên Visual Studio
-📍 
+## HANDPAN MUSIC APP 🎧🎶🥁
+
+📍 Đồ án môn Lập Trình Âm Thanh - MUL14126-01
+📍 Dùng thư viện WMPLib.dll & irrKlang Với C#.NET trên Visual Studio
