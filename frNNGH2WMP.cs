@@ -45,9 +45,11 @@ namespace A04NNGHHandpan
         /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult ch = MessageBox.Show("Thiệt là muốn đóng màn hình này. về màn hình chính (Y/N)", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult ch = MessageBox.Show("Thiệt là muốn đóng màn hình này. Về màn hình chính (Y/N)", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ch == DialogResult.Yes)
             {
+                axWMP.Ctlcontrols.stop();
+                axWMP.URL = "";
                 this.Close();
             }
         }//close
@@ -149,7 +151,7 @@ namespace A04NNGHHandpan
                 if (ch == DialogResult.OK)
                 {
                     //biến toàn cục ch đã khai báo phía trên, giữ lại nút lệnh (Y|N) mà NSD đã chọn để xử lý trong ...else..  
-                    txtMaso.Text = "Quý vị phải nhập mã số file vào đây";
+                    txtMaso.Text = "Nhập mã số file vào đây";
                     txtDesc.Text = ""; // Xóa thống để NSD nhập mlo6 tả mới
                     btnNew.Text = "Lưu file âm thanh"; //Đổi nhãn (.Text) thahh2 "Lưu...": tự nhập
 
@@ -172,11 +174,9 @@ namespace A04NNGHHandpan
                 {
                     string tenfile = System.IO.Path.GetFileName(openFileDialog1.FileName);//tên file âm thanh mà NSD đã chọn
 
-
                     //BS2: WMP nhả file ra để không bị lỗi "đang sử dụng" khi Copy - VẪN CHƯA CHẠY ĐƯỢC -> SỬA LẠI SAU
                     axWMP.Ctlcontrols.stop();
                     axWMP.URL = "";
-
 
                     //[1] COPY FILE ÂM THANH ĐÃ CHỌN VÀO THƯ MỤC ~\\AudioFiles
                     try
@@ -187,7 +187,7 @@ namespace A04NNGHHandpan
                     catch (System.Exception ex) { MessageBox.Show("Có lỗi copy file âm thanh:" + ex.Message); }
 
                     //[2] NẠP THÔNG TIN CỦA FILE ÂM THANH ĐÃ CHỌN VÀO DATABASE SQL
-                    if (txtMaso.Text != "" && txtMaso.Text != "Quý vị phải nhập mã số file vào đây")
+                    if (txtMaso.Text != "" && txtMaso.Text != "Nhập mã số file vào đây")
                     //NSD bắt buộc nhập mã số file âm thanh thì mới lưu được.
                     {
                         try
@@ -242,7 +242,7 @@ namespace A04NNGHHandpan
             if (btnModify.Text == "Sửa thông tin file")
             //bắt đầu Sửa thông tin file âm thanh trong các TextBox ["Sửa thông tin files" copy từ Design sang, KHÔNG tự nhập]
             {//Thông báo nhắc NSD cách sủa thông tin
-                MessageBox.Show("Quý vị sửa mô tả file trong TextBox Mô tả phía trên, Không sửa được các thông tin khác."); //thông báo hướng dẫn NSD cách sửa thông tin file            
+                MessageBox.Show("Sửa mô tả file trong TextBox Mô tả phía trên. Không sửa được các thông tin khác."); //thông báo hướng dẫn NSD cách sửa thông tin file            
                 btnModify.Text = "Lưu sau sửa"; //Đổi nhãn (.Text) thành2 "Lưu...": tự nhập
             }
             else//Sau khi NSD sửa thông tin xong =>Lưu thông tin file âm thanh sau sửa vào DB
@@ -273,11 +273,29 @@ namespace A04NNGHHandpan
         /// XÓA FILE ÂM THANH
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e"></param>  
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //B1: HỎI XÁC NHẬN
             DialogResult ch = MessageBox.Show("Thiệt xóa file âm thanh: " + txtMaso.Text.Trim() + " _ " + txtname.Text.Trim() + " không(Y/N)?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            // XÓA TRÊN THƯ MỤC VẬT LÝ
+            // 1. Lấy đường dẫn file vật lý cần xóa
+            string fileCanXoa = audiopath + txtname.Text.Trim();
+
+            // 2. Bắt WMP nhả file ra (để không bị lỗi file đang sử dụng)
+            axWMP.Ctlcontrols.stop();
+            axWMP.URL = "";
+
+            // 3. Xóa file thật trên ổ cứng
+            try
+            {
+                if (System.IO.File.Exists(fileCanXoa))
+                {
+                    System.IO.File.Delete(fileCanXoa); // LỆNH XÓA TẬN GỐC
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Không thể xóa file vật lý: " + ex.Message); }
 
             //B2: XÓA Khi NSD Y
             if (ch == DialogResult.Yes)//NSD đồng ý Xóa
@@ -299,5 +317,9 @@ namespace A04NNGHHandpan
             }//If NSD Y
 
         }//private void btnDelete_Click(object sender, EventArgs e)
-}//class
+        private void frNNGH2WMP_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            axWMP.Ctlcontrols.stop();
+        }//tắt nhạc khi đóng form
+    }//class
 }//namespace

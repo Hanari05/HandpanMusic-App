@@ -51,6 +51,7 @@
             this.Controls.Add(this.btnStartStop);
             this.Name = "frNNGH3irrKLang";
             this.Text = "04 NNGH: XỬ LÝ FILE ÂM THANH 2D DÙNG THƯ VIỆN irrKLang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frNNGH3irrKLang_FormClosing);
             this.ResumeLayout(false);
 
         }

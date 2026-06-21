@@ -491,6 +491,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            //this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // frNNGH2WMP
             // 
@@ -508,6 +509,7 @@
             this.Controls.Add(this.lbTitle);
             this.Name = "frNNGH2WMP";
             this.Text = "[04 NNGH] QUẢN LÝ FILEs ÂM THANH DÙNG THƯ VIỆN WMP.dll CỦA MS. WINDOWS";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frNNGH2WMP_FormClosing);
             this.Load += new System.EventHandler(this.frNNGH2WMP_Load);
             this.gBAudioInfo04.ResumeLayout(false);
             this.gBAudioInfo04.PerformLayout();

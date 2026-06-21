@@ -22,6 +22,19 @@ namespace A04NNGHHandpan
         } //constructor
 
         /// <summary>
+        /// THỦ TỤC NHẤN ĐÔI VÀO ICON TRÊN KHAY HỆ THỐNG => HIỆN FORM CHÍNH
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // 1. Hiển thị lại Form
+            this.Show();
+            // 2. Trả Form về kích thước bình thường (thoát khỏi chế độ thu nhỏ Minimized)
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        /// <summary>
         /// THỦ TỤC NHẢY ĐỒNG HỒ => NHẢY ĐỒNG HỒ TRÊN DÒNG TRẠNG THÁI BÊN PHẢI
         /// </summary>
         /// <param name="sender"></param>
@@ -89,6 +102,16 @@ namespace A04NNGHHandpan
             frNNGH3irrKLang fr = new frNNGH3irrKLang();
             fr.ShowDialog();
         }//irrKlang
+        private void quảnLýÂmThanhDùngIrrKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frNNGH3irrKLang fr = new frNNGH3irrKLang();
+            fr.ShowDialog();
+        }// Crtl + N
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            frNNGH3irrKLang fr = new frNNGH3irrKLang();
+            fr.ShowDialog();
+        }// contextMenustrip
 
         /// <summary>
         /// TẮT_MỞ CÁC THÀNH PHẦN TRÊN MÀN HÌNH - CONTEXTMENUSTRIP

@@ -51,5 +51,9 @@ namespace A04NNGHHandpan
                 MessageBox.Show("LỖI RỒI: Không tìm thấy nhạc ở đường dẫn này:\n" + fullPath);
             }
         }//button Play Sound
+        private void frNNGH3irrKLang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            fn.StopAllSounds();
+        }//tắt nhạc khi đóng form
     }//class
 }//namespace
