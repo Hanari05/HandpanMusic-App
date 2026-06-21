@@ -154,6 +154,12 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tắtMởÂmThanhMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tắtMởÂmThanhCôngCụToolbarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tắtMởMànHìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tắtMởToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -983,10 +989,16 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýÂmThanhDùngWMPToolStripMenuItem1,
+            this.toolStripSeparator26,
+            this.tắtMởÂmThanhMenuToolStripMenuItem,
+            this.tắtMởToolStripMenuItem,
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2,
+            this.tắtMởÂmThanhCôngCụToolbarToolStripMenuItem,
+            this.tắtMởMànHìnhToolStripMenuItem,
             this.toolStripSeparator12,
             this.thoátChươngTrìnhToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(327, 58);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(327, 188);
             // 
             // quảnLýÂmThanhDùngWMPToolStripMenuItem1
             // 
@@ -1057,6 +1069,45 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // tắtMởÂmThanhMenuToolStripMenuItem
+            // 
+            this.tắtMởÂmThanhMenuToolStripMenuItem.Name = "tắtMởÂmThanhMenuToolStripMenuItem";
+            this.tắtMởÂmThanhMenuToolStripMenuItem.Size = new System.Drawing.Size(326, 24);
+            this.tắtMởÂmThanhMenuToolStripMenuItem.Text = "Tắt | Mở âm thanh Menu";
+            this.tắtMởÂmThanhMenuToolStripMenuItem.Click += new System.EventHandler(this.tắtMởÂmThanhMenuToolStripMenuItem_Click);
+            // 
+            // tắtMởÂmThanhCôngCụToolbarToolStripMenuItem
+            // 
+            this.tắtMởÂmThanhCôngCụToolbarToolStripMenuItem.Name = "tắtMởÂmThanhCôngCụToolbarToolStripMenuItem";
+            this.tắtMởÂmThanhCôngCụToolbarToolStripMenuItem.Size = new System.Drawing.Size(326, 24);
+            this.tắtMởÂmThanhCôngCụToolbarToolStripMenuItem.Text = "Tắt | Mở âm thanh công cụ (Toolbar)";
+            // 
+            // tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2
+            // 
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2.Name = "tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2";
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2.Size = new System.Drawing.Size(326, 24);
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2.Text = "Tắt | Mở dòng trạng thái (Status Bar)";
+            this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2.Click += new System.EventHandler(this.tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2_Click);
+            // 
+            // tắtMởMànHìnhToolStripMenuItem
+            // 
+            this.tắtMởMànHìnhToolStripMenuItem.Name = "tắtMởMànHìnhToolStripMenuItem";
+            this.tắtMởMànHìnhToolStripMenuItem.Size = new System.Drawing.Size(326, 24);
+            this.tắtMởMànHìnhToolStripMenuItem.Text = "Tắt | Mở màn hình (Mainform)";
+            this.tắtMởMànHìnhToolStripMenuItem.Click += new System.EventHandler(this.tắtMởMànHìnhToolStripMenuItem_Click);
+            // 
+            // tắtMởToolStripMenuItem
+            // 
+            this.tắtMởToolStripMenuItem.Name = "tắtMởToolStripMenuItem";
+            this.tắtMởToolStripMenuItem.Size = new System.Drawing.Size(326, 24);
+            this.tắtMởToolStripMenuItem.Text = "Tắt | Mở thanh công cụ (Toolbar)";
+            this.tắtMởToolStripMenuItem.Click += new System.EventHandler(this.tắtMởToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator26
+            // 
+            this.toolStripSeparator26.Name = "toolStripSeparator26";
+            this.toolStripSeparator26.Size = new System.Drawing.Size(323, 6);
             // 
             // frNNGH1Main
             // 
@@ -1215,6 +1266,12 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem giosiwToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tắtMởÂmThanhMenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tắtMởMànHìnhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tắtMởÂmThanhCôngCụToolbarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tắtMởToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
     }
 }
 

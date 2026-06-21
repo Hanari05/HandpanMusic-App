@@ -35,9 +35,21 @@ namespace A04NNGHHandpan
         /// <param name="e"></param>
         private void btnStartStop_Click(object sender, EventArgs e)
         {
-            fn.SoundVolume = 100;
-            fn.Play2D(audiopath + "Emotional Romantic.mp3", true);
-            MessageBox.Show("OK");
+            // Tạo sẵn 1 biến chứa đường dẫn hoàn chỉnh
+            string fullPath = audiopath + "Documentary.wav";
+
+            // Bắt hệ thống dò tìm file vật lý trên ổ cứng trước khi phát
+            if (System.IO.File.Exists(fullPath))
+            {
+                fn.SoundVolume = 1.0f;
+                fn.Play2D(fullPath, true);
+                MessageBox.Show("TÌM THẤY FILE! Đã ra lệnh Play âm thanh.");
+            }
+            else
+            {
+                // In ra màn hình cái đường dẫn bị sai để mình tự soi
+                MessageBox.Show("LỖI RỒI: Không tìm thấy nhạc ở đường dẫn này:\n" + fullPath);
+            }
         }//button Play Sound
     }//class
 }//namespace

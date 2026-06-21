@@ -89,5 +89,27 @@ namespace A04NNGHHandpan
             frNNGH3irrKLang fr = new frNNGH3irrKLang();
             fr.ShowDialog();
         }//irrKlang
+
+        /// <summary>
+        /// TẮT_MỞ CÁC THÀNH PHẦN TRÊN MÀN HÌNH - CONTEXTMENUSTRIP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tắtMởÂmThanhMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuStrip1.Visible = !menuStrip1.Visible;
+        }
+        private void tắtMởMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+        }
+        private void tắtMởToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStrip1.Visible = !toolStrip1.Visible;
+        }
+        private void tắtMởDòngTrạngTháiStatusBarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = !statusStrip1.Visible;
+        }
     }//class
 }//namespace

@@ -162,6 +162,7 @@
   <ItemGroup>
     <Content Include="AudioFiles\20 Colors.mp3" />
     <Content Include="AudioFiles\Documentary.mp3" />
+    <Content Include="AudioFiles\Documentary.wav" />
     <Content Include="AudioFiles\Emotional Romantic.mp3" />
     <Content Include="AudioFiles\Essay.mp3" />
     <Content Include="AudioFiles\Extract From.mp3" />
