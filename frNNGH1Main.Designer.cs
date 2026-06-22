@@ -137,7 +137,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -160,8 +162,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -196,7 +196,7 @@
             this.toolStripSeparator14,
             this.thoátToolStripMenuItem1});
             this.hỆTHỐNGToolStripMenuItem1.Name = "hỆTHỐNGToolStripMenuItem1";
-            this.hỆTHỐNGToolStripMenuItem1.Size = new System.Drawing.Size(97, 26);
+            this.hỆTHỐNGToolStripMenuItem1.Size = new System.Drawing.Size(97, 24);
             this.hỆTHỐNGToolStripMenuItem1.Text = "HỆ THỐNG";
             // 
             // đăngNhậpToolStripMenuItem1
@@ -252,7 +252,7 @@
             this.quảnLýÂmThanhDùngIrrKLangToolStripMenuItem1,
             this.nạpÂmThanhDùngIrrKlangToolStripMenuItem1});
             this.qUẢNLÝÂMTHANHToolStripMenuItem1.Name = "qUẢNLÝÂMTHANHToolStripMenuItem1";
-            this.qUẢNLÝÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
+            this.qUẢNLÝÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(165, 24);
             this.qUẢNLÝÂMTHANHToolStripMenuItem1.Text = "QUẢN LÝ ÂM THANH";
             // 
             // quảnLýÂmThanhDùngWMPToolStripMenuItem2
@@ -338,7 +338,7 @@
             this.toolStripSeparator23,
             this.hợpÂmChordTrongÂmNhạcToneMusicToolStripMenuItem});
             this.xỬLÝÂMTHANHToolStripMenuItem1.Name = "xỬLÝÂMTHANHToolStripMenuItem1";
-            this.xỬLÝÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(143, 26);
+            this.xỬLÝÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(143, 24);
             this.xỬLÝÂMTHANHToolStripMenuItem1.Text = "XỬ LÝ ÂM THANH";
             // 
             // chuyểnÂmToolStripMenuItem
@@ -435,7 +435,7 @@
             // nHẬNDIỆNÂMTHANHToolStripMenuItem1
             // 
             this.nHẬNDIỆNÂMTHANHToolStripMenuItem1.Name = "nHẬNDIỆNÂMTHANHToolStripMenuItem1";
-            this.nHẬNDIỆNÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.nHẬNDIỆNÂMTHANHToolStripMenuItem1.Size = new System.Drawing.Size(186, 24);
             this.nHẬNDIỆNÂMTHANHToolStripMenuItem1.Text = "NHẬN DIỆN ÂM THANH";
             // 
             // tRÌNHBÀYToolStripMenuItem1
@@ -449,7 +449,7 @@
             this.toolStripSeparator18,
             this.tỷLệZoomToolStripMenuItem1});
             this.tRÌNHBÀYToolStripMenuItem1.Name = "tRÌNHBÀYToolStripMenuItem1";
-            this.tRÌNHBÀYToolStripMenuItem1.Size = new System.Drawing.Size(96, 26);
+            this.tRÌNHBÀYToolStripMenuItem1.Size = new System.Drawing.Size(96, 24);
             this.tRÌNHBÀYToolStripMenuItem1.Text = "TRÌNH BÀY";
             // 
             // tắtMởThanhThựcĐơnMenuBarToolStripMenuItem1
@@ -498,7 +498,7 @@
             this.toolStripSeparator15,
             this.toolStripSeparator16});
             this.cÔNGCỤToolStripMenuItem1.Name = "cÔNGCỤToolStripMenuItem1";
-            this.cÔNGCỤToolStripMenuItem1.Size = new System.Drawing.Size(87, 26);
+            this.cÔNGCỤToolStripMenuItem1.Size = new System.Drawing.Size(87, 24);
             this.cÔNGCỤToolStripMenuItem1.Text = "CÔNG CỤ";
             // 
             // toolStripSeparator15
@@ -517,7 +517,7 @@
             this.giosiwToolStripMenuItem,
             this.hướngDẫnSửDụngToolStripMenuItem2});
             this.tRỢGIÚPToolStripMenuItem1.Name = "tRỢGIÚPToolStripMenuItem1";
-            this.tRỢGIÚPToolStripMenuItem1.Size = new System.Drawing.Size(87, 26);
+            this.tRỢGIÚPToolStripMenuItem1.Size = new System.Drawing.Size(87, 24);
             this.tRỢGIÚPToolStripMenuItem1.Text = "TRỢ GIÚP";
             // 
             // giosiwToolStripMenuItem
@@ -942,16 +942,30 @@
             // toolStripSeparator25
             // 
             this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(85, 24);
+            this.toolStripButton5.Text = "irrKlang";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton4
             // 
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(69, 28);
+            this.toolStripButton4.Size = new System.Drawing.Size(69, 24);
             this.toolStripButton4.Text = "Close";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton1
             // 
@@ -1117,20 +1131,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // toolStripSeparator27
-            // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(85, 28);
-            this.toolStripButton5.Text = "irrKlang";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
             // frNNGH1Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1147,10 +1147,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frNNGH1Main";
             this.Text = "AUDIO PROGRAM BY 04 Nguyễn Ngọc Gia Hân, D23CQPTUD01-N :  PTIT HCM";
-            //this.SizeChanged += new System.EventHandler(this.frNNGH1Main_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

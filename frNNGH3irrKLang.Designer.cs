@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frNNGH3irrKLang));
             this.btnStartStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 481);
             this.Controls.Add(this.btnStartStop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frNNGH3irrKLang";
             this.Text = "04 NNGH: XỬ LÝ FILE ÂM THANH 2D DÙNG THƯ VIỆN irrKLang";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frNNGH3irrKLang_FormClosing);
