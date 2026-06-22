@@ -26,6 +26,11 @@ namespace A04NNGHHandpan
         public frNNGH3irrKLang()
         {
             InitializeComponent();
+            // Nếu phát hiện ứng dụng đã được đóng gói và cài đặt (thư mục AudioFiles nằm cạnh file exe)
+            if (System.IO.Directory.Exists(Application.StartupPath + "\\AudioFiles\\"))
+            {
+                audiopath = Application.StartupPath + "\\AudioFiles\\"; // Ghi đè lại đường dẫn đúng
+            }
         }
 
         /// <summary>
